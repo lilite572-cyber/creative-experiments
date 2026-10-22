@@ -90,6 +90,11 @@ Human review and a locally configured key are still required before live testing
 The key-setup command is `.venv/bin/python scripts/configure_openai.py`; it makes
 no API call and does not enable paid mode by itself.
 
+For the two prepared local research packets, follow the
+[combined launch instructions](docs/run_both_pilots_ru.md). The launcher checks
+both sets of real human labels before sending any inference request and keeps
+the allocated spending ledgers across restarts.
+
 The [official deprecation schedule](https://developers.openai.com/api/docs/deprecations)
 checked on 2026-10-22 lists this snapshot's shutdown for January 14, 2027.
 Migration and a fresh live contract test are required before using it beyond

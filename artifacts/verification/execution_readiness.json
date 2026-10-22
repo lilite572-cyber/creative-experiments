@@ -1,0 +1,33 @@
+{
+  "scope": "Gated local execution of the two authorized pilots",
+  "creative_experiments_tests": {
+    "passed": 79,
+    "seconds": 9.57,
+    "command": ".venv/bin/python -m unittest discover -s tests -q"
+  },
+  "briefguard_tests": {
+    "passed": 102,
+    "seconds": 19.448
+  },
+  "actual_packet_preflight": "blocked_before_inference",
+  "blockers": [
+    "BriefGuard human labels and source confirmation incomplete",
+    "Creative Experiments human labels and source confirmations incomplete"
+  ],
+  "openai_access_check": "DNS resolution failed in agent environment; credential validity not determined",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "live_inference_requests": 0,
+  "api_spend_usd": 0,
+  "allocated_caps_usd": {
+    "briefguard": 0.5,
+    "creative_experiments": 5.0
+  },
+  "user_total_ceiling_usd": 8,
+  "sha256": {
+    "scripts/run_live_pilot.py": "d1700bcf24c62484859ab8c84188cba359b9d868fcb0ec8a623d6622c13772ed",
+    "scripts/run_authorized_pilots.py": "7d2c1cf76151973154d12eabc5251e3948c5e673d4c45e9fb302fb7363a2d568",
+    "tests/test_live_pilot_run.py": "938fb6589c1b9fddbe444f9b684dbf460cc48702b2e5205f019ca6157f54887a",
+    "tests/test_combined_pilots.py": "76f215d2e1039e9d8c629aecb32221adaf149ff58c09dfe5506a655da26cf538",
+    "app/research.py": "9006456c6124302584e9e86e529a7657893dbab3ae746f03656d7f5da3d00589"
+  }
+}
