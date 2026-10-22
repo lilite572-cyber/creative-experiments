@@ -1,0 +1,1145 @@
+{
+  "provenance": "Authored synthetic software acceptance cases. Expected labels are test specifications, not human annotations of real video.",
+  "scope": "Descriptive recommendation eligibility, arithmetic, references, limitations. Not model quality or engagement uplift.",
+  "cases": [
+    {
+      "id": "compatible_pattern",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "observational",
+        "delta_pp": 20
+      }
+    },
+    {
+      "id": "no_metrics",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "paid_vs_organic",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "paid",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "paid",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "different_platforms",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "tiktok",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "tiktok",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "different_sources",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "other-source",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "other-source",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "unknown_hook",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": null
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": null
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": null
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": null
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "missing_retention",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": null,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "repeat_publication",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "repeat",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.99,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "small_denominators",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 5,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 5,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 5,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 5,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "equal_means",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    },
+    {
+      "id": "reverse_pattern",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.30000000000000004,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "observational",
+        "delta_pp": -20
+      }
+    },
+    {
+      "id": "different_windows",
+      "videos": [
+        {
+          "id": "0",
+          "title": "Synthetic 0",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "1",
+          "title": "Synthetic 1",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "preparation",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "2",
+          "title": "Synthetic 2",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        },
+        {
+          "id": "3",
+          "title": "Synthetic 3",
+          "duration": 8,
+          "synthetic": true,
+          "analysis": {
+            "hook_category": "packaging",
+            "mode": "synthetic_fixture"
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "publication_id": "0",
+          "video_id": "0",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-09",
+          "views": 200,
+          "retention_3s": 0.6,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "1",
+          "video_id": "1",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-09",
+          "views": 200,
+          "retention_3s": 0.7,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "2",
+          "video_id": "2",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.4,
+          "retention_unit": "fraction"
+        },
+        {
+          "publication_id": "3",
+          "video_id": "3",
+          "platform": "instagram",
+          "traffic": "organic",
+          "source": "manual-export-v1",
+          "period_start": "2026-01-01",
+          "period_end": "2026-01-08",
+          "views": 200,
+          "retention_3s": 0.5,
+          "retention_unit": "fraction"
+        }
+      ],
+      "expected": {
+        "kind": "exploratory",
+        "delta_pp": null
+      }
+    }
+  ]
+}

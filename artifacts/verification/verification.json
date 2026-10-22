@@ -1,0 +1,90 @@
+{
+  "executed_at": "2026-10-22T21:31:52.486990+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-15.0-arm64-arm-64bit",
+  "live_api_calls": 0,
+  "checks": [
+    {
+      "check": "tests",
+      "command": [
+        "/tmp/creative-verify-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/verification/tests.txt",
+      "stderr": null
+    },
+    {
+      "check": "dependencies",
+      "command": [
+        "/tmp/creative-verify-env/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/verification/dependencies.txt",
+      "stderr": null
+    },
+    {
+      "check": "recommendations",
+      "command": [
+        "/tmp/creative-verify-env/bin/python",
+        "scripts/evaluate_recommendations.py"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/verification/recommendations.json",
+      "stderr": ""
+    },
+    {
+      "check": "javascript",
+      "command": [
+        "node",
+        "--check",
+        "web/app.js"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/verification/javascript.txt",
+      "stderr": null
+    }
+  ],
+  "javascript_check_skipped": false,
+  "sha256": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/db.py": "73ee930821c0b2fefb6390c8fe9383e19f70dc2cf57ef7ccf6fb91f3b87df4ab",
+    "app/demo.py": "ed851af34634b2adff56ed90c992595008eb441cb87b334bc777405a66992608",
+    "app/main.py": "cbf53702caf728fb4c221b702b89cd20aa208229715854c60c88ff3b672c6a47",
+    "app/media.py": "83fb2626f247a11e29a1dc0b3b4319ae797af6dec21540cb90cb080c4097eb5e",
+    "app/provider.py": "99c6ee21e8429ea1f0bffdbd2888ee5931c8cf78e6542e2b581ac928e78fac8a",
+    "app/research.py": "9006456c6124302584e9e86e529a7657893dbab3ae746f03656d7f5da3d00589",
+    "fixtures/demo/README.md": "230d96c22b2f93ff342029dd98a4804dafcdca9288139f8e9281c01f7b075039",
+    "fixtures/demo/metrics.csv": "32a77dde61a5c7d99610b7f07a928cb2360b4d868b58fd4267b04f547425a19d",
+    "fixtures/demo/replacement.mp4": "a31baebed863c12083305fc05926e97f03d2225d709204225f9ab5c7f0ada497",
+    "fixtures/demo/sample.mp4": "f7831f448ccd45cd84800bc75ed479a18ee11f2d76d20a22294759fa422b8849",
+    "fixtures/evaluation.json": "c9156bfce14b5c59999ee27ca3c97b901d9831473e5f08055f4ff141acb3fd17",
+    "scripts/demo_walkthrough.py": "295f55a9eee62ca58f7f2f894dedecaf49e153cf1c02f32b1f8ae2a50de422b6",
+    "scripts/evaluate_recommendations.py": "2ec7f93e0ac65041a5544869a90c7fdaba8b881586d7a8e0ece6cce5692c4682",
+    "scripts/verify.py": "6a8af9780c85049195fcfecbd620899d4d17828d81daa93db9b6b3d1b706c1e4",
+    "tests/test_api.py": "64b2cbbc260bc069c9c2a1a9bce94b4dd78ef919464fc0d7633240fc926c0790",
+    "tests/test_media_provider.py": "2756d2d9acbc68bf3b7d6d28e2675b0d18ff3d215d8d879925dab8435e9b1ffa",
+    "tests/test_research.py": "4616b7a1c5885024d0589354c2dbb0d4dd7b61cbd386b8af49996a97abb2e873",
+    "web/app.js": "eff1ea103acac86f40d4a3fc10b73304e22ca8e85125370ae4d07115a08847f9",
+    "web/index.html": "22f6e2e2f8e4d6c236090a736888bf68b22d6c150f092ea3875ed30d37234347",
+    "web/styles.css": "c8e165e5329a4d7b41058d24a934c83d1d9088f14890e62f996cac2ba3d0efdf",
+    "requirements.txt": "1247cbb65d7d0cb62f4c85d9907a1fc5333f94e326025f3cdca4ce9e53c590bd",
+    "requirements.lock": "01d543d49e1d065d2c0b3c49d6d7319398d604d4355279cfa1c09f2f154dcabf"
+  },
+  "additional_checks": [
+    {
+      "command": ".venv/bin/python scripts/demo_walkthrough.py",
+      "exit_code": 0,
+      "output": "artifacts/verification/demo_flow.json",
+      "executed_at": "2026-10-22T21:32:06.009733+00:00"
+    }
+  ]
+}

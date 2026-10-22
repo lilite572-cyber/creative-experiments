@@ -1,0 +1,49 @@
+test_auth_and_cross_workspace_scope (test_api.ApiTests.test_auth_and_cross_workspace_scope) ... ok
+test_bad_video_and_live_analysis_gate (test_api.ApiTests.test_bad_video_and_live_analysis_gate) ... ok
+test_chunked_upload_rejected_before_multipart_parsing (test_api.ApiTests.test_chunked_upload_rejected_before_multipart_parsing) ... ok
+test_cross_origin_write_rejected (test_api.ApiTests.test_cross_origin_write_rejected) ... ok
+test_csv_atomic_duplicate_missing_and_foreign_video (test_api.ApiTests.test_csv_atomic_duplicate_missing_and_foreign_video) ... ok
+test_decode_failure_keeps_draft_and_records_operation (test_api.ApiTests.test_decode_failure_keeps_draft_and_records_operation) ... ok
+test_full_edit_freeze_evaluate_history_survives_restart (test_api.ApiTests.test_full_edit_freeze_evaluate_history_survives_restart) ... ok
+test_home_references_served_stylesheet_and_script (test_api.ApiTests.test_home_references_served_stylesheet_and_script) ... ok
+test_local_analysis_and_provider_failure_recorded (test_api.ApiTests.test_local_analysis_and_provider_failure_recorded) ... ok
+test_restart_interrupts_persisted_work_without_retrying (test_api.ApiTests.test_restart_interrupts_persisted_work_without_retrying) ... ok
+test_synthetic_edit_requires_exact_supplied_fixture (test_api.ApiTests.test_synthetic_edit_requires_exact_supplied_fixture) ... ok
+test_synthetic_variant_without_fixture_gets_measured_analysis (test_api.ApiTests.test_synthetic_variant_without_fixture_gets_measured_analysis) ... ok
+test_unknown_provider_outcome_halts_followup_requests (test_api.ApiTests.test_unknown_provider_outcome_halts_followup_requests) ... ok
+test_edit_and_independent_pixel_comparison (test_media_provider.MediaTests.test_edit_and_independent_pixel_comparison) ... ok
+test_eight_second_clip_keeps_exact_cfr_packet_timing (test_media_provider.MediaTests.test_eight_second_clip_keeps_exact_cfr_packet_timing) ... ok
+test_invalid_and_unaligned_edits (test_media_provider.MediaTests.test_invalid_and_unaligned_edits) ... ok
+test_invalid_file_and_reject_output_overwrite (test_media_provider.MediaTests.test_invalid_file_and_reject_output_overwrite) ... ok
+test_middle_edit_preserves_audio_and_tail (test_media_provider.MediaTests.test_middle_edit_preserves_audio_and_tail) ... ok
+test_oversized_metadata_rejected_before_frame_decode (test_media_provider.MediaTests.test_oversized_metadata_rejected_before_frame_decode) ... ok
+test_probe_and_frames (test_media_provider.MediaTests.test_probe_and_frames) ... ok
+test_disabled_without_network (test_media_provider.ProviderTests.test_disabled_without_network) ... ok
+test_fake_transport_only (test_media_provider.ProviderTests.test_fake_transport_only) ... ok
+test_incomplete_wrong_model_missing_usage (test_media_provider.ProviderTests.test_incomplete_wrong_model_missing_usage) ... ok
+test_malformed_envelopes_are_safe_provider_errors (test_media_provider.ProviderTests.test_malformed_envelopes_are_safe_provider_errors) ... ok
+test_proposal_preserves_evidence_and_rejects_fabrication (test_media_provider.ProviderTests.test_proposal_preserves_evidence_and_rejects_fabrication) ... ok
+test_structured_result_cost_and_evidence (test_media_provider.ProviderTests.test_structured_result_cost_and_evidence) ... ok
+test_timeout_not_retried (test_media_provider.ProviderTests.test_timeout_not_retried) ... ok
+test_unknown_evidence_and_bad_schema (test_media_provider.ProviderTests.test_unknown_evidence_and_bad_schema) ... ok
+test_conflicting_repeat_is_atomic (test_research.CSVTests.test_conflicting_repeat_is_atomic) ... ok
+test_foreign_video_rejected (test_research.CSVTests.test_foreign_video_rejected) ... ok
+test_header_and_missing_columns (test_research.CSVTests.test_header_and_missing_columns) ... ok
+test_invalid_numbers_units_dates (test_research.CSVTests.test_invalid_numbers_units_dates) ... ok
+test_null_preserved (test_research.CSVTests.test_null_preserved) ... ok
+test_overlap_and_publication_reassignment_rejected (test_research.CSVTests.test_overlap_and_publication_reassignment_rejected) ... ok
+test_repeat_is_idempotent (test_research.CSVTests.test_repeat_is_idempotent) ... ok
+test_frozen_criteria_win_over_edited_fields (test_research.EvaluationTests.test_frozen_criteria_win_over_edited_fields) ... ok
+test_generation_brief_does_not_claim_generation (test_research.EvaluationTests.test_generation_brief_does_not_claim_generation) ... ok
+test_insufficient_is_first_class (test_research.EvaluationTests.test_insufficient_is_first_class) ... ok
+test_observed_success_and_failure (test_research.EvaluationTests.test_observed_success_and_failure) ... ok
+test_zero_is_not_missing_retention (test_research.EvaluationTests.test_zero_is_not_missing_retention) ... ok
+test_do_not_mix_paid_or_platform_or_source (test_research.RecommendationTests.test_do_not_mix_paid_or_platform_or_source) ... ok
+test_no_selecting_best_window (test_research.RecommendationTests.test_no_selecting_best_window) ... ok
+test_stats_sources_and_limits (test_research.RecommendationTests.test_stats_sources_and_limits) ... ok
+test_unknown_semantics_or_no_data_is_exploratory (test_research.RecommendationTests.test_unknown_semantics_or_no_data_is_exploratory) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 5.936s
+
+OK

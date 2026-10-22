@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Creative Experiments</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div id="auth" class="auth-wrap">
+      <section class="auth-copy">
+        <div class="wordmark">
+          <span class="brand-symbol">ce</span> Creative<br />Experiments
+        </div>
+        <div class="auth-heading">
+          A better next cut<br />starts with a question.
+        </div>
+        <p>
+          Keep the video, the change and the result together.<br />Make creative
+          decisions you can trace.
+        </p>
+        <div class="auth-foot">Independent creative research workspace</div>
+      </section>
+      <section class="auth-panel">
+        <div class="eyebrow">YOUR WORKSPACE</div>
+        <h1>Pick up the experiment.</h1>
+        <p class="muted">
+          Sign in to your local account, or explore the complete sample
+          workflow.
+        </p>
+        <form id="authForm" class="form-grid">
+          <label
+            >Email<input
+              id="email"
+              type="email"
+              autocomplete="username"
+              required
+              placeholder="you@example.com" /></label
+          ><label
+            >Password<input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              minlength="10"
+              required
+          /></label>
+          <div class="actions">
+            <button class="primary" type="submit">Sign in</button
+            ><button id="register" type="button" class="secondary">
+              Create account
+            </button>
+          </div>
+        </form>
+        <div id="authError" class="error hidden" role="alert"></div>
+        <div class="demo-entry">
+          <span class="tag">SYNTHETIC DEMO</span>
+          <h3>Meet the sample coffee brand</h3>
+          <p>
+            Explore generated clips, illustrative metrics and an experiment. No
+            API key or paid call required.
+          </p>
+          <button id="demoLogin" class="secondary" type="button">
+            Open sample workspace <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+    </div>
+    <div id="app" class="app-shell hidden">
+      <aside class="sidebar">
+        <a href="#library" class="wordmark"
+          ><span class="brand-symbol">ce</span
+          ><span>Creative<br />Experiments</span></a
+        ><label class="workspace-label" for="workspaceSelect">WORKSPACE</label
+        ><select id="workspaceSelect" aria-label="Workspace"></select
+        ><button id="newWorkspace" class="quiet new-workspace">
+          + New workspace
+        </button>
+        <nav aria-label="Main navigation">
+          <a href="#library" data-view="library"
+            ><span class="nav-number">01</span> Library</a
+          ><a href="#analysis" data-view="analysis"
+            ><span class="nav-number">02</span> Video analysis</a
+          ><a href="#experiments" data-view="experiments"
+            ><span class="nav-number">03</span> Experiments</a
+          ><a href="#knowledge" data-view="knowledge"
+            ><span class="nav-number">04</span> Brand knowledge</a
+          >
+        </nav>
+        <div class="sidebar-bottom">
+          <p>Observe. Change. Learn.</p>
+          <span id="account" class="muted"></span
+          ><button id="logout" class="quiet">Sign out</button>
+        </div>
+      </aside>
+      <div class="main-shell">
+        <header class="topbar">
+          <span id="workspaceName"></span>
+          <div class="top-actions">
+            <span id="workspaceType" class="tag"></span
+            ><button id="activityToggle" class="quiet">
+              Activity <span id="activityCount">0</span>
+            </button>
+          </div>
+        </header>
+        <div id="notice" class="notice hidden" role="status"></div>
+        <main id="content" tabindex="-1"></main>
+        <aside
+          id="activity"
+          class="activity-panel hidden"
+          aria-label="Operation history"
+        ></aside>
+        <footer class="app-footer">
+          <span>Creative Experiments</span
+          ><span>Evidence before conclusions.</span>
+        </footer>
+      </div>
+    </div>
+    <dialog id="workspaceDialog">
+      <form id="workspaceForm" class="form-grid">
+        <div class="section-heading">
+          <h2>New brand workspace</h2>
+          <button
+            type="button"
+            id="closeWorkspace"
+            class="quiet"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+        <label>Brand name<input name="name" required maxlength="100" /></label
+        ><label
+          >Product<textarea
+            name="product"
+            required
+            maxlength="2000"
+            rows="2"
+          ></textarea></label
+        ><label
+          >Audience<input name="audience" required maxlength="1000" /></label
+        ><label
+          >Content goal<input name="goal" required maxlength="1000" /></label
+        ><button type="submit" class="primary">Create workspace</button>
+        <p id="workspaceError" class="error hidden"></p>
+      </form>
+    </dialog>
+  </body>
+</html>

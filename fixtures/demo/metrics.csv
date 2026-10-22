@@ -1,0 +1,5 @@
+publication_id,video_id,platform,traffic,source,period_start,period_end,views,retention_3s,retention_unit
+synthetic-post-1,demo-video-1,instagram,organic,synthetic-demo-v1,2026-10-01,2026-10-08,1000,0.4,fraction
+synthetic-post-2,demo-video-2,instagram,organic,synthetic-demo-v1,2026-10-01,2026-10-08,1000,0.44,fraction
+synthetic-post-3,demo-video-3,instagram,organic,synthetic-demo-v1,2026-10-01,2026-10-08,1000,0.56,fraction
+synthetic-post-4,demo-video-4,instagram,organic,synthetic-demo-v1,2026-10-01,2026-10-08,1000,0.6,fraction

@@ -1,0 +1,13 @@
+{
+  "executed_date_local": "2026-10-23",
+  "timezone": "Asia/Almaty",
+  "python": "3.12.14",
+  "command": "/tmp/creative-verify-env/bin/python scripts/verify.py (recommendations subprocess)",
+  "sha256": {
+    "app/research.py": "9006456c6124302584e9e86e529a7657893dbab3ae746f03656d7f5da3d00589",
+    "scripts/evaluate_recommendations.py": "2ec7f93e0ac65041a5544869a90c7fdaba8b881586d7a8e0ece6cce5692c4682",
+    "fixtures/evaluation.json": "c9156bfce14b5c59999ee27ca3c97b901d9831473e5f08055f4ff141acb3fd17",
+    "artifacts/verification/recommendations.json": "1b188886e75c50eed33a19aa3f71300c456550cc4599a410d3d0a0b05e6a9421"
+  },
+  "executed_at": "2026-10-22T21:31:52.486990+00:00"
+}
