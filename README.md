@@ -83,6 +83,13 @@ unverified. The visual and hypothesis adapter pins
 `gpt-4.1-mini-2025-04-14`. Check current availability and prices before
 authorizing a run or changing the model/protocol.
 
+The [separate live-pilot protocol](docs/live_pilot.md) prepares real-source review
+packets and unsent requests. The [combined budget](docs/combined_api_budget_ru.md)
+allocates $5 for this project and $0.50 for BriefGuard within the authorized $8.
+Human review and a locally configured key are still required before live testing.
+The key-setup command is `.venv/bin/python scripts/configure_openai.py`; it makes
+no API call and does not enable paid mode by itself.
+
 The [official deprecation schedule](https://developers.openai.com/api/docs/deprecations)
 checked on 2026-10-22 lists this snapshot's shutdown for January 14, 2027.
 Migration and a fresh live contract test are required before using it beyond

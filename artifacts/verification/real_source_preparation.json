@@ -1,0 +1,39 @@
+{
+  "status": "prepared_not_executed",
+  "source_count": 3,
+  "sampled_frames": 24,
+  "analysis_operations": 6,
+  "hypothesis_slots": 6,
+  "external_api_calls": 0,
+  "api_cost_usd": 0,
+  "human_review": "pending",
+  "independence": "unconfirmed; three different stock files are not proof of three independent recordings",
+  "publication_metrics": "not available",
+  "source_packet_sha256": "27da083ebd2455907c13d00e42d32d915cec28087507b0979400c8eca77cc0ba",
+  "sources": [
+    {
+      "source_id": "mixkit-3578",
+      "source_url": "https://mixkit.co/free-stock-video/coffee-maker-making-coffee-3578/",
+      "credit": "Mixkit stock footage; individual creator not identified on source page",
+      "rights_url": "https://mixkit.co/license/modal/videoFree/",
+      "distribution_allowed": "false",
+      "source_sha256": "4931c9514f470012e0d54f413ac8194d1476344000f928b6c6d3ccd971054a5b"
+    },
+    {
+      "source_id": "mixkit-49916",
+      "source_url": "https://mixkit.co/free-stock-video/morning-coffee-of-a-young-woman-49916/",
+      "credit": "Mixkit stock footage; individual creator not identified on source page",
+      "rights_url": "https://mixkit.co/license/modal/videoFree/",
+      "distribution_allowed": "false",
+      "source_sha256": "2aad2d144c2efa3f1a7c091f78645d843c80155ce415d5734f8b1893ce598a71"
+    },
+    {
+      "source_id": "mixkit-4991",
+      "source_url": "https://mixkit.co/free-stock-video/serving-coffee-directly-from-a-coffee-pot-4991/",
+      "credit": "Mixkit stock footage; individual creator not identified on source page",
+      "rights_url": "https://mixkit.co/license/modal/videoFree/",
+      "distribution_allowed": "false",
+      "source_sha256": "71d7320b6c65727ab8325bdbe2d3ff69ca82c1410c21a389756b4ea1f9000ed2"
+    }
+  ]
+}

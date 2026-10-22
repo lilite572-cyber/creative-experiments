@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-23",
+  "scope": "Offline pilot preparation and secure local key setup; no live model calls",
+  "full_suite_tests": 55,
+  "full_suite_seconds": 5.571,
+  "full_suite_status": "passed",
+  "new_preparation_tests": 6,
+  "new_key_setup_tests": 5,
+  "external_api_calls": 0,
+  "real_source_dataset_status": "Not produced by these tests; test videos are synthetic temporary fixtures",
+  "sha256": {
+    "configs/live_pilot_v1.json": "4e4ee43b0017909ae304a1c3f52c16fffc190f9ee59b3a4e97f61f16038a790e",
+    "docs/live_pilot.md": "eea4918429b5e21d55d87e5ffdca729d1e17ad0a3ce53084224cadcbfc708936",
+    "scripts/prepare_live_pilot.py": "4fde1983a9ed79b169a89368acbc332f91a91f2f4d85aab939c56cf96ab31067",
+    "scripts/configure_openai.py": "5f6f854c55aca3d915a803b33595c63947a62ec740e5fec85976d6793eb31e18",
+    "tests/test_live_pilot_prepare.py": "7ed7fe20359b8d1e744b5afa856584000fcba2313c527f7f55b3936648ca4419",
+    "tests/test_configure_openai.py": "ca33c68c58b948bb9d1ac164ca28767382572adaa4bd44cbb21c579bfa9568e9"
+  }
+}
