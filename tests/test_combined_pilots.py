@@ -9,6 +9,25 @@ from scripts import run_authorized_pilots as runner
 
 
 class CombinedPilotTests(unittest.TestCase):
+    def test_briefguard_only_excludes_creative_from_check_and_execution(self):
+        with patch.object(runner, "preflight", return_value={"ready": True}) as check, \
+             patch.object(runner, "load_private_key", return_value="fake-test-key"), \
+             patch.object(runner, "provider_check", return_value={"available": True}), \
+             patch.object(runner, "execute", return_value=0) as execute:
+            self.assertEqual(runner.main(["--project", "briefguard", "--execute"]), 0)
+            selected = check.call_args.args[0]
+            self.assertEqual([job["name"] for job in selected], ["BriefGuard"])
+            self.assertEqual(execute.call_args.args[0], selected)
+            self.assertIn("--approve-openai-gpt41mini-usd050", selected[0]["execute"])
+
+    def test_briefguard_only_does_not_execute_when_provider_is_unavailable(self):
+        with patch.object(runner, "preflight", return_value={"ready": True}), \
+             patch.object(runner, "load_private_key", return_value="fake-test-key"), \
+             patch.object(runner, "provider_check", return_value={"available": False}), \
+             patch.object(runner, "execute") as execute:
+            self.assertEqual(runner.main(["--project", "briefguard", "--execute"]), 2)
+            execute.assert_not_called()
+
     def test_execute_never_reads_key_or_contacts_provider_when_review_is_missing(self):
         with patch.object(runner, "preflight", return_value={"ready": False}), \
                 patch.object(runner, "load_private_key") as key, \

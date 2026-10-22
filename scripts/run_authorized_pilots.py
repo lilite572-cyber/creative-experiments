@@ -101,12 +101,16 @@ def execute(planned: list[dict], key: str) -> int:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--briefguard-root", type=Path, default=ROOT.parent / "briefguard")
+    parser.add_argument("--project", choices=("both", "briefguard"), default="both",
+                        help="Run BriefGuard independently while the Creative Experiments source review is on hold")
     parser.add_argument("--check-provider", action="store_true",
                         help="Check model access without inference; reads the private local key")
     parser.add_argument("--execute", action="store_true",
                         help="Execute already-authorized pilots only after both readiness checks pass")
     args = parser.parse_args(argv)
     planned = jobs(args.briefguard_root.resolve())
+    if args.project == "briefguard":
+        planned = [job for job in planned if job["name"] == "BriefGuard"]
     status = preflight(planned)
     key_path = ROOT / "data/private/openai_api_key"
     status["key_file_present"] = key_path.is_file()
