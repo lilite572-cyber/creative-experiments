@@ -1,5 +1,17 @@
 # Integration-check readiness, 23 October 2026
 
+## Latest: Gemini live responses and offline review
+
+Both Gemini operations returned HTTP 200. Analysis passed (12/12 valid frame
+references); hypothesis wording was locally rejected for copying a numeric
+preservation requirement from the baseline. The original status remains halted.
+A separate post-hoc offline validator accepts exact baseline preservation text,
+retains protected fields and makes no new API calls. Four focused correction tests
+passed. Model hook/CTA interpretations still raise semantic concerns; no accuracy
+or engagement claim follows. See [the full result](gemini_results.md).
+
+The sections below are historical preparation and provider-blocker records.
+
 ## Separate Gemini continuation prepared
 
 Update: the first owner's Gemini setup was rejected by an overly restrictive

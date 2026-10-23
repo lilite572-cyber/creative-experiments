@@ -80,8 +80,11 @@ The edited video and frame-preservation report are separate artifacts.
 A [prospective Gemini protocol](docs/gemini_open_media_v1.md) and native
 `gemini-3.5-flash-lite` adapter are available through a separate research runner.
 They reuse the licensed source's eight frozen frames and preserve both previous
-OpenAI attempts. This is not yet connected to the web UI. No successful Gemini
-live run is claimed until its report exists.
+OpenAI attempts. This is not yet connected to the web UI. The owner completed
+two real requests: visual analysis passed with 12 valid references; hypothesis
+wording was rejected by the frozen digit ban. A separately documented offline
+correction accepts verbatim numeric preservation requirements without changing
+the original failed-run status. See [results and limitations](docs/gemini_results.md).
 
 The owner must confirm **Free tier** for the key's project, without paid billing.
 The API key alone cannot verify this. Expected additional expense is $0 under

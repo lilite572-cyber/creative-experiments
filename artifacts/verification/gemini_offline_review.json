@@ -1,0 +1,56 @@
+{
+  "protocol": "gemini-offline-review-v1",
+  "post_hoc": true,
+  "network_requests": 0,
+  "additional_cost_usd": 0,
+  "original_status": "halted",
+  "original_schema_accepted": 1,
+  "original_hypothesis_accepted_on_replay": false,
+  "revised_hypothesis_accepted_on_replay": true,
+  "correction": "Only exact baseline preservation text is exempt from the prose digit ban; generated prose remains checked.",
+  "evaluation": {
+    "analysis_references": {
+      "total": 12,
+      "valid": 12
+    },
+    "hypothesis_references": {
+      "total": 1,
+      "valid": 1
+    },
+    "baseline_candidates": 1,
+    "model_hypotheses": 1,
+    "programmatic_fields_preserved": true,
+    "human_quality_assessment": "not_performed",
+    "publication_metrics": null
+  },
+  "usage_from_both_raw_responses": {
+    "promptTokenCount": 9538,
+    "candidatesTokenCount": 703,
+    "totalTokenCount": 10241
+  },
+  "expected_free_tier_cost_usd": 0,
+  "billed_cost_usd": null,
+  "semantic_review_flags": [
+    {
+      "kind": "hook_outside_initial_two_seconds",
+      "frame_index": 457
+    },
+    {
+      "kind": "license_credit_classified_as_cta",
+      "frame_index": 1066
+    }
+  ],
+  "flags_are": "Post-hoc consistency warnings, not human factual accuracy labels.",
+  "original_summary_sha256": "80b67b2878d4a240092cd3c5ef277906e46cf5e761f2973fc5848b2b4b23cf67",
+  "review_runtime_sha256": "9824ebda70786b41f09014d458e2302ff7130d8b6d761a98dd08bf7dce6eb0bb",
+  "limitations": [
+    "One convenience source; no human reference labels for this check.",
+    "Reference validity is not factual accuracy or human agreement.",
+    "No publication metrics, engagement effect or successful creative pattern established.",
+    "One analysis and one wording operation do not measure repeatability.",
+    "Source converted to silent 24 fps MP4; model received eight downscaled stills only.",
+    "Separate Gemini integration check, not an OpenAI comparison or app UI integration.",
+    "Offline correction was designed after observing this failure; it is not a prospective success.",
+    "An accepted response can still contain semantic errors. No engagement benefit was measured."
+  ]
+}

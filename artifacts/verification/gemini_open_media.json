@@ -1,0 +1,110 @@
+{
+  "protocol": "gemini-open-media-v1",
+  "status": "halted",
+  "attempts": [
+    {
+      "operation": "analysis",
+      "status": "succeeded",
+      "started_at_unix": 1792716798.6029272,
+      "audit": {
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "model_version": "gemini-3.5-flash-lite",
+        "prompt_version": "gemini-open-media-v1",
+        "usage": {
+          "promptTokenCount": 9042,
+          "candidatesTokenCount": 551,
+          "totalTokenCount": 9593,
+          "promptTokensDetails": [
+            {
+              "modality": "IMAGE",
+              "tokenCount": 8800
+            },
+            {
+              "modality": "TEXT",
+              "tokenCount": 242
+            }
+          ],
+          "serviceTier": "standard"
+        },
+        "response_id": "_6_aaqWTA5jm28oP8LTTuQ8",
+        "cost_usd": null,
+        "expected_free_tier_cost_usd": 0,
+        "cost_basis": "Free-tier expectation based on owner attestation; not a billing receipt."
+      },
+      "duration_ms": 3447,
+      "artifact": "analysis.json",
+      "artifact_sha256": "3cd15637bd9bd361d997b319f3b9c7f5f81624858516bed92955fcb546d071f8",
+      "diagnostics": {
+        "http_status": 200
+      },
+      "error": null
+    },
+    {
+      "operation": "hypothesis",
+      "status": "failed",
+      "started_at_unix": 1792716802.056464,
+      "duration_ms": 1391,
+      "artifact": "hypothesis.json",
+      "artifact_sha256": "ae0ef4e62ba1edef43cc4377685a78a14a9339c783f7e7cb30f0a109d2b9f767",
+      "diagnostics": {
+        "http_status": 200
+      },
+      "error": "Model wording must be bounded prose without numerical claims."
+    }
+  ],
+  "plan_sha256": "69b175d917c29df8234c6f69924f9f45e2d0cb082ee913c9c72d3a93907ffea4",
+  "setup_revision": "key-format-v2",
+  "authorization_sha256": "fe63ebe96a901e93dfc2c330e73b1c89a28bfa3ea28c0aa70c7c0affe0a74e13",
+  "budget_usd": 0,
+  "free_tier_basis": "owner_attestation_not_api_verified",
+  "source": {
+    "title": "Coffee Bean & Tea Leaf Process",
+    "author": "Kelliks",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coffee_Bean_%26_Tea_Leaf_Process.webm",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "assessment": "Assistant reviewed source and license; not a human attestation",
+    "modifications": "Silent 24 fps H.264 conversion; eight JPEG frame extracts",
+    "source_id": "commons-kelliks-coffee-2013"
+  },
+  "source_count": 1,
+  "frames": 8,
+  "model": "gemini-3.5-flash-lite",
+  "attempted": 2,
+  "schema_accepted": 1,
+  "expected_free_tier_cost_usd": 0,
+  "billed_cost_usd": null,
+  "billing_note": "Free tier attested by owner; API does not return a billing receipt.",
+  "evaluation": {
+    "analysis_references": {
+      "total": 12,
+      "valid": 12
+    },
+    "hypothesis_references": {
+      "total": 0,
+      "valid": 0
+    },
+    "baseline_candidates": 1,
+    "model_hypotheses": 0,
+    "programmatic_fields_preserved": null,
+    "human_quality_assessment": "not_performed",
+    "publication_metrics": null
+  },
+  "runtime_sha256": {
+    "app/gemini_provider.py": "fe59f1665130d42e28a7bfcf614ea97366ae221342fe86cf71cb466333b54d7e",
+    "scripts/run_gemini_check.py": "6b12a878f50b6bfffe711d243ca63044d4df5cd308b4c8862d1c1e0d21da61f3",
+    "docs/gemini_open_media_v1.md": "37b6992b89e5935f728d6cf862a663c5f09c44b0e09efc0043844fae35583e99",
+    "docs/gemini_key_format_v2.md": "bf962800964b62348414ee66acab2fac5de2657b4efdf19d2009939239649558"
+  },
+  "source_freeze_sha256": "770a687039dba69737483a437a282c2ef107b8aedccd371c65897a608e01f74f",
+  "prior_openai_ledger_sha256": "0c4c74db0474c18b43e31551ca985a52bef005dd01e8d176034453267f7b93e6",
+  "limitations": [
+    "One convenience source; no human reference labels for this check.",
+    "Reference validity is not factual accuracy or human agreement.",
+    "No publication metrics, engagement effect or successful creative pattern established.",
+    "One analysis and one wording operation do not measure repeatability.",
+    "Source converted to silent 24 fps MP4; model received eight downscaled stills only.",
+    "Separate Gemini integration check, not an OpenAI comparison or app UI integration."
+  ]
+}
