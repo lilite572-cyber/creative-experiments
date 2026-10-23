@@ -78,8 +78,9 @@ The edited video and frame-preservation report are separate artifacts.
 ## Optional paid integration — disabled by default
 
 Adapter tests use fake responses. The owner's first live integration attempt
-halted without a parsed response; its charge is unknown and live compatibility
-is not established. The visual and hypothesis adapter pins
+halted without a parsed response; diagnostic recovery then received HTTP 429
+`credit_balance_exhausted`. No valid live analysis was obtained; the original
+charge is unknown and live compatibility is not established. The visual and hypothesis adapter pins
 `gpt-4.1-mini-2025-04-14`. Check current availability and prices before
 authorizing a run or changing the model/protocol.
 
@@ -101,11 +102,12 @@ A separate [open-media integration check](docs/open_media_integration_v1.md)
 uses one CC BY-SA coffee video and does not claim human-rated accuracy. Its source,
 eight frames and runtime are frozen; 33 preparation-focused tests passed. The
 owner's first analysis attempt then halted with an unknown outcome and a $0.10
-reservation. A separate diagnostic recovery is prepared, not executed; 15 focused
-check/recovery tests passed. See the [current status and exact owner-Terminal
-command](docs/open_media_check_status.md). Recovery keeps the original reservation
-and can bring the total to at most $0.30 from the same CE allocation. Public
-reports exclude media and raw payloads.
+reservation. Diagnostic recovery then made one attempt and received an explicit
+credit-balance rejection. The ledger retains $0.20 total reservations, not a
+confirmed charge. Fifteen focused check/recovery tests had passed before that
+execution. See the [current billing blocker and preserved history](docs/open_media_check_status.md).
+Do not rerun either one-shot command or reset its ledger. Public reports exclude
+media and raw payloads.
 
 The [official deprecation schedule](https://developers.openai.com/api/docs/deprecations)
 checked on 2026-10-22 lists this snapshot's shutdown for January 14, 2027.

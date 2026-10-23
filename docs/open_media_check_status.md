@@ -1,5 +1,35 @@
 # Integration-check readiness, 23 October 2026
 
+## Current blocker: provider credit balance
+
+The owner executed diagnostic recovery. OpenAI returned HTTP 429 with
+`type=insufficient_quota`, `code=credit_balance_exhausted`. Its message states
+that no credits remain and points to the organization billing page. This is a
+quota rejection, not evidence of a model-quality failure. It does not establish
+that the API key is invalid or that the video was analyzed.
+
+There are now two recorded attempts: the original unknown outcome and this
+explicit HTTP rejection. No valid analysis or hypothesis was obtained. The
+canonical ledger retains $0.20 in reservations; this is not a measured API charge.
+Actual total spending remains unknown because the first attempt was not reconciled.
+Do not attribute the exhaustion of an advertised $50 credit grant to these calls.
+The account's activation, balance and credit history have not been inspected.
+
+The saved report is `artifacts/verification/open_media_recovery.json`. Its public
+and private copies match; both attempt artifact hashes were verified. No new
+inference was sent during this inspection. The original runtime and preparation
+freezes remain unchanged. No code change or additional test run was needed to
+record this provider response.
+
+The owner must check the balance and credit history for the account/organization
+associated with the configured key at
+<https://platform.openai.com/settings/organization/billing/>. Do not post the key
+in chat. Both existing one-shot execution commands have now been used and must
+not be rerun or their ledgers deleted. A future execution requires a separately
+recorded recovery after the billing blocker is resolved, preserving all attempts.
+
+The sections below describe earlier states and are retained as history.
+
 ## Latest outcome: owner execution halted
 
 The owner subsequently executed the command. The first analysis attempt halted

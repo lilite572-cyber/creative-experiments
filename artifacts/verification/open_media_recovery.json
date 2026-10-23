@@ -1,0 +1,66 @@
+{
+  "protocol": "open-media-recovery-v1",
+  "status": "halted",
+  "source": {
+    "title": "Coffee Bean & Tea Leaf Process",
+    "author": "Kelliks",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coffee_Bean_%26_Tea_Leaf_Process.webm",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "assessment": "Assistant reviewed source and license; not a human attestation",
+    "modifications": "Silent 24 fps H.264 conversion; eight JPEG frame extracts",
+    "source_id": "commons-kelliks-coffee-2013"
+  },
+  "source_count": 1,
+  "frames": 8,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "prior_unknown_attempts": 1,
+  "new_attempts": 1,
+  "new_schema_accepted": 0,
+  "total_reserved_usd": 0.2,
+  "new_usage_cost_estimate_usd": null,
+  "total_usage_cost_usd": null,
+  "billing_reconciliation": "original attempt charge unknown",
+  "diagnostics": [
+    {
+      "operation": "analysis",
+      "http_status": 429,
+      "failure_kind": "http_error",
+      "provider_error": {
+        "type": "insufficient_quota",
+        "code": "credit_balance_exhausted",
+        "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+      },
+      "error": "OpenAI returned HTTP 429; no retry sent."
+    }
+  ],
+  "evaluation": {
+    "analysis_references": {
+      "total": 0,
+      "valid": 0
+    },
+    "hypothesis_references": {
+      "total": 0,
+      "valid": 0
+    },
+    "baseline_candidates": 0,
+    "model_hypotheses": 0,
+    "programmatic_fields_preserved": null,
+    "human_quality_assessment": "not_performed",
+    "publication_metrics": null
+  },
+  "plan_sha256": "06d1a8a7f8c79bd22b09a274ffa83e5d08c107050906333a781c22a69194e0a3",
+  "prior_ledger_sha256": "b2e69607c5882f6305c46b0e14617f6fbed6a48187d6f1f8949514b7820d16b3",
+  "runtime_sha256": {
+    "scripts/recover_open_media_check.py": "b72ab2fb7fab001e529f88afe960d111daec507e78be483e3c4a1d0081d4c92f",
+    "scripts/provider_diagnostics.py": "b24b7220b3c2521a2befefeb861ca81ec8fc6c80cb741f9bfb50a946df1ec38e",
+    "docs/open_media_recovery_v1.md": "b98472999c2fada7e3a93a2eb60e803622a85a53a9da7ab18a5031702d298472"
+  },
+  "limitations": [
+    "One convenience source; no human reference labels for this check.",
+    "Reference validity is not factual accuracy or human agreement.",
+    "No publication metrics, engagement effect or successful creative pattern established.",
+    "One analysis and one wording operation do not measure repeatability.",
+    "Source converted to silent 24 fps MP4; model received eight downscaled stills only."
+  ]
+}
