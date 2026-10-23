@@ -75,6 +75,21 @@ A generation brief is a task specification. No generative-video provider is
 connected, and uploading a fragment does not prove that it was AI-generated.
 The edited video and frame-preservation report are separate artifacts.
 
+## Separate Gemini free-tier check
+
+A [prospective Gemini protocol](docs/gemini_open_media_v1.md) and native
+`gemini-3.5-flash-lite` adapter are available through a separate research runner.
+They reuse the licensed source's eight frozen frames and preserve both previous
+OpenAI attempts. This is not yet connected to the web UI. No successful Gemini
+live run is claimed until its report exists.
+
+The owner must confirm **Free tier** for the key's project, without paid billing.
+The API key alone cannot verify this. Expected additional expense is $0 under
+that condition; two requests maximum, no retries or paid/provider fallback.
+Keys are entered with hidden Terminal input and saved outside Git. See the
+protocol for setup and one-shot execution. Twenty-five focused tests passed
+(ten Gemini and fifteen existing open-media/recovery tests), using fake transports.
+
 ## Optional paid integration — disabled by default
 
 Adapter tests use fake responses. The owner's first live integration attempt

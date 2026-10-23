@@ -1,5 +1,21 @@
 # Integration-check readiness, 23 October 2026
 
+## Separate Gemini continuation prepared
+
+The owner obtained a Gemini key. The new [Gemini protocol](gemini_open_media_v1.md)
+uses the existing licensed source and a separate ledger. It requires an explicit
+Free-tier confirmation tied to the key, permits two requests and no automatic
+retry, and authorizes no new spending. Ten new Gemini tests and fifteen existing
+open-media/recovery tests passed with fake transports. No Gemini inference or
+live compatibility is claimed at preparation. Existing OpenAI ledgers, runtime
+freezes and results remain unchanged.
+
+Subsequent account screenshots showed the $50 OpenAI grant was redeemed on
+23 September and later marked Inactive; usage for 23 September–23 October
+displayed $0.01. This does not explain the reason for deactivation, but does not
+support attributing $50 of API spending to these experiments. The older account
+inspection statement below describes the earlier stage of the investigation.
+
 ## Current blocker: provider credit balance
 
 The owner executed diagnostic recovery. OpenAI returned HTTP 429 with
