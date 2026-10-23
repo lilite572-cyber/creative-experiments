@@ -77,9 +77,9 @@ The edited video and frame-preservation report are separate artifacts.
 
 ## Optional paid integration — disabled by default
 
-No live OpenAI calls were made during development verification. Adapter tests use
-fake responses; model availability, account access and live compatibility remain
-unverified. The visual and hypothesis adapter pins
+Adapter tests use fake responses. The owner's first live integration attempt
+halted without a parsed response; its charge is unknown and live compatibility
+is not established. The visual and hypothesis adapter pins
 `gpt-4.1-mini-2025-04-14`. Check current availability and prices before
 authorizing a run or changing the model/protocol.
 
@@ -99,11 +99,13 @@ the allocated spending ledgers across restarts.
 
 A separate [open-media integration check](docs/open_media_integration_v1.md)
 uses one CC BY-SA coffee video and does not claim human-rated accuracy. Its source,
-eight frames and runtime are frozen; 33 focused tests passed. Execution from the
-agent stopped at the model metadata check, before any paid request. See the
-[current status and exact owner-Terminal command](docs/open_media_check_status.md).
-The check reserves at most $0.20 from the same CE allocation and exports only an
-aggregate report, keeping media and raw payloads private.
+eight frames and runtime are frozen; 33 preparation-focused tests passed. The
+owner's first analysis attempt then halted with an unknown outcome and a $0.10
+reservation. A separate diagnostic recovery is prepared, not executed; 15 focused
+check/recovery tests passed. See the [current status and exact owner-Terminal
+command](docs/open_media_check_status.md). Recovery keeps the original reservation
+and can bring the total to at most $0.30 from the same CE allocation. Public
+reports exclude media and raw payloads.
 
 The [official deprecation schedule](https://developers.openai.com/api/docs/deprecations)
 checked on 2026-10-22 lists this snapshot's shutdown for January 14, 2027.

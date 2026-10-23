@@ -1,0 +1,64 @@
+{
+  "protocol": "open-media-integration-v1",
+  "status": "halted",
+  "source": {
+    "title": "Coffee Bean & Tea Leaf Process",
+    "author": "Kelliks",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coffee_Bean_%26_Tea_Leaf_Process.webm",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "assessment": "Assistant reviewed source and license; not a human attestation",
+    "modifications": "Silent 24 fps H.264 conversion; eight JPEG frame extracts",
+    "source_id": "commons-kelliks-coffee-2013"
+  },
+  "source_count": 1,
+  "frames": 8,
+  "model": "gpt-4.1-mini-2025-04-14",
+  "attempted": 1,
+  "schema_accepted": 0,
+  "reserved_usd": 0.1,
+  "usage_cost_estimate_usd": null,
+  "input_tokens": null,
+  "output_tokens": null,
+  "operations": [
+    {
+      "kind": "analysis",
+      "status": "unknown",
+      "duration_ms": 6998
+    }
+  ],
+  "evaluation": {
+    "analysis_references": {
+      "total": 0,
+      "valid": 0
+    },
+    "hypothesis_references": {
+      "total": 0,
+      "valid": 0
+    },
+    "baseline_candidates": 0,
+    "model_hypotheses": 0,
+    "programmatic_fields_preserved": null,
+    "human_quality_assessment": "not_performed",
+    "publication_metrics": null
+  },
+  "freeze_sha256": "770a687039dba69737483a437a282c2ef107b8aedccd371c65897a608e01f74f",
+  "runtime_sha256": {
+    "scripts/run_open_media_check.py": "2cf38cdd2953dee9fbef8cad2aaeefecd96180cf681effda77f8c00006b4dbf4",
+    "scripts/run_live_pilot.py": "d1700bcf24c62484859ab8c84188cba359b9d868fcb0ec8a623d6622c13772ed",
+    "scripts/run_authorized_pilots.py": "68ce99464b814b85c2fe9ae5644bc868a0d7d14a953b86a933171d7a4027b03f",
+    "app/provider.py": "99c6ee21e8429ea1f0bffdbd2888ee5931c8cf78e6542e2b581ac928e78fac8a",
+    "app/media.py": "83fb2626f247a11e29a1dc0b3b4319ae797af6dec21540cb90cb080c4097eb5e",
+    "app/research.py": "9006456c6124302584e9e86e529a7657893dbab3ae746f03656d7f5da3d00589",
+    "docs/open_media_integration_v1.md": "94cdded869c164fdcb85d5877191a62109dde0fd454d3872e21f15ad6e5af488"
+  },
+  "media_sha256": "e594040d2b3dc02f320490467078a8505d68bf3b3952ae3dd95fd006f92c5373",
+  "cost_basis": "Returned API tokens at frozen planning rates; not a billing receipt.",
+  "limitations": [
+    "One convenience source; no human reference labels for this check.",
+    "Reference validity is not factual accuracy or human agreement.",
+    "No publication metrics, engagement effect or successful creative pattern established.",
+    "One analysis and one wording operation do not measure repeatability.",
+    "Source converted to silent 24 fps MP4; model received eight downscaled stills only."
+  ]
+}

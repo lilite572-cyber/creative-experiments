@@ -1,5 +1,34 @@
 # Integration-check readiness, 23 October 2026
 
+## Latest outcome: owner execution halted
+
+The owner subsequently executed the command. The first analysis attempt halted
+after 6,998 ms with `ProviderError`, without a parsed response. One attempt and a
+$0.10 reservation are recorded; actual charge and tokens are unknown. No
+hypothesis call occurred. The original logger discarded the precise error detail,
+so HTTP rejection, connection failure and parsing failure cannot be distinguished.
+This is not evidence of poor model accuracy or an invalid key.
+
+The completed failed-run artifact is
+`artifacts/verification/open_media_integration.json`. The earlier readiness report
+below describes the state before the owner's attempt. **Do not rerun its original
+execution command.**
+
+A separate [explicit diagnostic recovery](open_media_recovery_v1.md) is prepared,
+not executed. It preserves the original attempt and reservation and permits at
+most two new calls. Total reservation can reach $0.30 within the existing CE $5
+allocation. It records safe provider diagnostics, refuses replay, and does not
+claim the old unknown charge has been reconciled. Fifteen focused tests passed
+(seven original-check tests and eight recovery/transport tests).
+
+The next owner-Terminal command is:
+
+```sh
+/Users/admin/Documents/Codex/2026-10-22/new-chat-20/creative-experiments/.venv/bin/python /Users/admin/Documents/Codex/2026-10-22/new-chat-20/creative-experiments/scripts/recover_open_media_check.py --execute
+```
+
+## Historical preparation state
+
 The separate [open-media protocol](open_media_integration_v1.md) is implemented
 in commit `2faac2c`. Its one licensed source was downloaded, checked against the
 Commons original SHA-1, converted, and sampled into eight frames. All input and
