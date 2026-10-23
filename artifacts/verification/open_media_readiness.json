@@ -1,0 +1,28 @@
+{
+  "status": "prepared_provider_metadata_check_failed",
+  "runtime_commit": "2faac2c",
+  "inference_requests": 0,
+  "reserved_usd": 0,
+  "usage_cost_usd": 0,
+  "future_max_attempts": 2,
+  "future_max_reservation_usd": 0.2,
+  "future_planning_cost_usd": 0.01984,
+  "source_count": 1,
+  "frames": 8,
+  "human_labels_for_this_check": null,
+  "original_human_labels_preserved": true,
+  "focused_tests": {
+    "original_runner": 20,
+    "coordinator": 6,
+    "new_runner": 7,
+    "passed": 33
+  },
+  "tamper_check": "changed frame rejected before inference",
+  "freeze_sha256": "770a687039dba69737483a437a282c2ef107b8aedccd371c65897a608e01f74f",
+  "source_media_sha256": "e594040d2b3dc02f320490467078a8505d68bf3b3952ae3dd95fd006f92c5373",
+  "limitations": [
+    "No live inference result exists for this check.",
+    "A failed model metadata check does not establish an invalid key.",
+    "One source without human labels permits operational checks only."
+  ]
+}

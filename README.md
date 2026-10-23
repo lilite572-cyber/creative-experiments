@@ -86,7 +86,9 @@ authorizing a run or changing the model/protocol.
 The [separate live-pilot protocol](docs/live_pilot.md) prepares real-source review
 packets and unsent requests. The [combined budget](docs/combined_api_budget_ru.md)
 allocates $5 for this project and $0.50 for BriefGuard within the authorized $8.
-Human review and a locally configured key are still required before live testing.
+For the prepared Mixkit packet, Amir supplied 24 frame descriptions and configured
+the local key; permission for the specific AI evaluation use remains unresolved.
+The packet has not been sent to the provider.
 The key-setup command is `.venv/bin/python scripts/configure_openai.py`; it makes
 no API call and does not enable paid mode by itself.
 
@@ -94,6 +96,14 @@ For the two prepared local research packets, follow the
 [combined launch instructions](docs/run_both_pilots_ru.md). The launcher checks
 both sets of real human labels before sending any inference request and keeps
 the allocated spending ledgers across restarts.
+
+A separate [open-media integration check](docs/open_media_integration_v1.md)
+uses one CC BY-SA coffee video and does not claim human-rated accuracy. Its source,
+eight frames and runtime are frozen; 33 focused tests passed. Execution from the
+agent stopped at the model metadata check, before any paid request. See the
+[current status and exact owner-Terminal command](docs/open_media_check_status.md).
+The check reserves at most $0.20 from the same CE allocation and exports only an
+aggregate report, keeping media and raw payloads private.
 
 The [official deprecation schedule](https://developers.openai.com/api/docs/deprecations)
 checked on 2026-10-22 lists this snapshot's shutdown for January 14, 2027.
