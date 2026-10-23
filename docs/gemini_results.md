@@ -52,6 +52,35 @@ this source. A single recording and one request per operation cannot establish
 repeatability, generalization, superiority over another model, engagement lift,
 or a successful creative pattern. The recommendation remains exploratory.
 
-This Gemini path is a research runner, not yet a selectable provider in the web
-application. Neither original inference command should be repeated: the ledger
-deliberately blocks replay. No new API request was needed for the offline review.
+## Inspect the recorded result in the application
+
+Fresh Gemini inference remains a CLI research workflow, not a selectable live
+provider in the web application. The saved analysis can now be imported with
+`python scripts/import_gemini_evidence.py --owner demo@example.test` on the
+owner's checkout containing the private pilot packet. The command verifies
+source/response hashes, binds the destination workspace to its owner and is
+idempotent. It makes no API calls. Keys and raw request/response artifacts are
+not published with the source package.
+
+The separate **Open-media pilot** workspace displays Gemini provenance, source
+attribution, the original timestamped descriptions and review flags. The original
+model opening category is retained as `raw_model_hook_category`; the category
+used by the rule engine is `unknown` pending review. This prevents an unverified
+19-second scene from supporting an opening-pattern claim. It does not silently
+repair the original response or count as human validation.
+
+A real-source version was subsequently edited and compared in the browser:
+1,067 frames at 24 fps (44.458333 seconds), 48 replaced and 1,019 unchanged frames
+verified against the normalized master. Both players reached `readyState=4`
+without media errors. The initial 100 MiB generated-output rejection remains in
+the local operation history; the separate [v2 editor](media_edit_v2.md) resolved
+that processing limit without modifying the frozen media implementation.
+
+The real-source experiment remains a **draft**. It has no publication metrics,
+was not published and has no engagement conclusion. The completed synthetic
+40% → 49% example is a separate fictional acceptance workflow.
+
+Neither original inference command should be repeated: the ledger deliberately
+blocks replay. No new API request was needed for the offline review, import,
+editing or final acceptance checks. See [verification](verification.md) and the
+[final report](final_report_ru.md).

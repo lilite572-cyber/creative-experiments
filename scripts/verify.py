@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import platform
 import shutil
@@ -16,6 +17,10 @@ OUT = ROOT / "artifacts" / "verification"
 
 
 def main() -> int:
+    global OUT
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir', type=Path, default=OUT)
+    OUT = parser.parse_args().output_dir.resolve()
     OUT.mkdir(parents=True, exist_ok=True)
     commands = [
         ("tests", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
@@ -39,7 +44,7 @@ def main() -> int:
                 "check": name,
                 "command": command,
                 "exit_code": result.returncode,
-                "output": str(output.relative_to(ROOT)),
+                "output": str(output.relative_to(ROOT)) if output.is_relative_to(ROOT) else str(output),
                 "stderr": result.stderr if name == "recommendations" else None,
             }
         )

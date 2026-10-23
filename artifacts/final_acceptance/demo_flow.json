@@ -1,0 +1,95 @@
+{
+  "executed_at": "2026-10-23T01:18:11.790723+00:00",
+  "kind": "synthetic localhost HTTP acceptance walkthrough",
+  "live_api_calls": 0,
+  "experiment_id": "f5205bcbaeaf48f699076db8dfc84c5c",
+  "url": "http://127.0.0.1:8770/#experiments/f5205bcbaeaf48f699076db8dfc84c5c",
+  "first_import": {
+    "inserted": 1,
+    "duplicate": 1
+  },
+  "repeated_import": {
+    "inserted": 0,
+    "duplicate": 2
+  },
+  "edit_report": {
+    "editor_version": "generated-media-v2",
+    "generated_limit_bytes": 536870912,
+    "start": 0.0,
+    "end": 2.0,
+    "start_frame": 0,
+    "end_frame": 48,
+    "fps": 24,
+    "timing": {
+      "verified": true,
+      "frame_count": 192,
+      "frame_duration_seconds": 0.041666666666666664,
+      "video_duration_seconds": 8.0,
+      "timebase": "1/12288"
+    },
+    "replaced_frames": 48,
+    "total_frames": 192,
+    "unchanged_frames_verified": 144,
+    "verification": "Decoded yuv420p frame SHA-256 outside the interval matches the 24 fps normalized master.",
+    "audio": "Source is silent; replacement audio ignored.",
+    "normalization": "24 fps, 320\u00d7480, yuv420p; lossless H.264 encoding. Original compressed bytes are not preserved.",
+    "source_sha256": "f7831f448ccd45cd84800bc75ed479a18ee11f2d76d20a22294759fa422b8849",
+    "replacement_sha256": "a31baebed863c12083305fc05926e97f03d2225d709204225f9ab5c7f0ada497",
+    "output_sha256": "d9b01c2e9a905083eb177050f680713ed51d0a2450023d80e6106a790c6868b5",
+    "metadata": {
+      "duration": 8.0,
+      "width": 320,
+      "height": 480,
+      "fps": 24.0,
+      "has_audio": false
+    }
+  },
+  "evaluation": {
+    "outcome": "observed_improvement",
+    "summary": "Observed retention changed from 40.0% to 49.0% (+9.0 percentage points). The saved +5 pp criterion was met. This does not establish causation.",
+    "baseline": {
+      "id": "1dab6b21e3dd4fa398a8000687335e77",
+      "publication_id": "synthetic-post-1",
+      "video_id": "demo-video-1",
+      "platform": "instagram",
+      "traffic": "organic",
+      "source": "synthetic-demo-v1",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-08",
+      "views": 1000,
+      "retention_3s": 0.4,
+      "retention_unit": "fraction",
+      "imported_at": "2026-10-22T21:00:23.943258+00:00"
+    },
+    "variant": {
+      "publication_id": "synthetic-89efc6abdbb14bb5804635fccef2ba78",
+      "video_id": "89efc6abdbb14bb5804635fccef2ba78",
+      "platform": "instagram",
+      "traffic": "organic",
+      "source": "synthetic-demo-v1",
+      "period_start": "2026-10-01",
+      "period_end": "2026-10-08",
+      "views": 1000,
+      "retention_3s": 0.49,
+      "retention_unit": "fraction",
+      "id": "22c1fb7851fe430e89d74d44f326a0cd",
+      "imported_at": "2026-10-23T01:18:11.780838+00:00"
+    },
+    "delta_pp": 8.999999999999996,
+    "limitations": [
+      "Observational comparison: audience, distribution and publication timing were not randomized; the difference does not establish a causal effect.",
+      "No randomized assignment or population uncertainty estimate is available."
+    ],
+    "criteria": {
+      "hypothesis": "Replacing a packaging opening with preparation in the first two seconds may improve 3-second retention.",
+      "threshold_pp": 5.0,
+      "min_views": 100,
+      "window_days": 7,
+      "metric": "retention_3s",
+      "revision": 4
+    },
+    "evaluated_at": "2026-10-23T01:18:11.785364+00:00",
+    "synthetic": true
+  },
+  "knowledge_record_found": true
+}

@@ -8,6 +8,12 @@ This is an independent portfolio product. It is not affiliated with Higgsfield.
 The included coffee example and its publication statistics are **synthetic**.
 No engagement improvement or real campaign outcome is claimed.
 
+The final local acceptance run passed **123 tests** in a clean environment.
+The synthetic end-to-end workflow and a real-source edit were checked in the
+browser. A saved response from the separate Gemini pilot can be inspected in
+its own workspace without sending another API request. See the
+[verification evidence](docs/verification.md) and [final report in Russian](docs/final_report_ru.md).
+
 ## Run locally
 
 Requirements: Python 3.12, a supported macOS/Linux/Windows environment and a
@@ -51,18 +57,23 @@ An upload may be at most 50 MiB, 120 seconds, 1–60 fps and 1920×1080 pixels
 metadata is required. Editing uses a 24 fps timeline, frame-aligned boundaries
 and an alternative fragment long enough to cover the replacement interval.
 The original soundtrack is retained; audio in the alternative fragment is ignored.
+The [v2 editor](docs/media_edit_v2.md) separately bounds internally generated
+lossless media at 512 MiB; the upload limit stays 50 MiB. A generated variant
+larger than 100 MiB can be played and compared, but the original analysis and
+source-edit input path cannot process it again without a smaller export.
 
 See [the five-minute demo](docs/demo.md), [CSV contract](docs/csv.md) and
 [architecture](docs/architecture.md). Ready-to-upload authored clips and the
 seed CSV are also included in [fixtures/demo](fixtures/demo/README.md).
 
-## Three different kinds of analysis
+## Analysis sources
 
 | Mode | Actual behavior |
 | --- | --- |
 | Synthetic demo | Known labels attached to locally authored clips. No model call. |
 | Local | FFmpeg measures the file and extracts timestamped frames. Hook, product, text and speech semantics remain unknown. |
 | OpenAI | Prepared adapter interprets up to eight sampled frames with structured outputs and validated evidence references. Speech requires the separate optional transcription path. |
+| Saved Gemini pilot | Hash-verified import of the recorded real API response and licensed source into a separate workspace. Opening the UI sends no request. Review flags are visible; the unverified opening category is excluded from pattern calculations. |
 
 The offline recommendation engine computes compatible groups and proposes at
 most three tests. It compares preparation-first and packaging-first hooks where
@@ -80,7 +91,8 @@ The edited video and frame-preservation report are separate artifacts.
 A [prospective Gemini protocol](docs/gemini_open_media_v1.md) and native
 `gemini-3.5-flash-lite` adapter are available through a separate research runner.
 They reuse the licensed source's eight frozen frames and preserve both previous
-OpenAI attempts. This is not yet connected to the web UI. The owner completed
+OpenAI attempts. Fresh Gemini calls remain a CLI research workflow; the saved
+result is now viewable in the web UI through an explicit offline import. The owner completed
 two real requests: visual analysis passed with 12 valid references; hypothesis
 wording was rejected by the frozen digit ban. A separately documented offline
 correction accepts verbatim numeric preservation requirements without changing
@@ -93,14 +105,26 @@ Keys are entered with hidden Terminal input and saved outside Git. See the
 protocol for setup and one-shot execution. The [key-format correction](docs/gemini_key_format_v2.md)
 adds support for current authorization keys after a local setup rejection;
 the original plan is preserved and the corrected runtime has a separate freeze.
-Twenty-eight focused tests passed (thirteen Gemini and fifteen existing
-open-media/recovery tests), using fake transports.
+The final 123-test suite includes the key-format, provider-failure and offline
+evidence-import regressions; those tests use fake provider transports.
+
+On the owner's checkout, where the private pilot artifacts already exist:
+
+```bash
+python scripts/import_gemini_evidence.py --owner demo@example.test
+```
+
+This idempotent command verifies the source and response hashes and creates
+**Open-media pilot** separately from the synthetic demo. It performs zero API
+calls. The private video, raw responses, keys and workspace database are not
+included in the public source package. A fresh checkout can run the complete
+synthetic demo and inspect the published aggregate pilot reports.
 
 ## Optional paid integration — disabled by default
 
 Adapter tests use fake responses. The owner's first live integration attempt
 halted without a parsed response; diagnostic recovery then received HTTP 429
-`credit_balance_exhausted`. No valid live analysis was obtained; the original
+`credit_balance_exhausted`. No valid OpenAI analysis was obtained; the original
 charge is unknown and live compatibility is not established. The visual and hypothesis adapter pins
 `gpt-4.1-mini-2025-04-14`. Check current availability and prices before
 authorizing a run or changing the model/protocol.
@@ -157,7 +181,7 @@ reset the data directory or ledger to bypass an approved budget.
 ```bash
 python -m unittest discover -s tests -v
 python scripts/evaluate_recommendations.py
-python scripts/verify.py
+python scripts/verify.py --output-dir artifacts/local-verification
 ```
 
 Tests exercise media processing, ownership boundaries, CSV failure cases,
@@ -167,8 +191,10 @@ answers and compares against an unstratified mean-difference baseline. It checks
 eligibility, source references, arithmetic and required limitations separately.
 It is software acceptance evidence, not independent research on creative quality
 or an evaluation of a live model. The [verification report](docs/verification.md)
-separates automated results from the browser walkthrough. `scripts/verify.py`
-saves command output and source hashes in `artifacts/verification/`.
+separates automated results from the browser walkthrough. The final saved checks
+are in `artifacts/final_acceptance/`; use a separate output directory for a new
+run so historical evidence is preserved. `scripts/verify.py` saves command output
+and source hashes in the selected directory. No API calls are made by verification.
 
 ## Boundaries
 

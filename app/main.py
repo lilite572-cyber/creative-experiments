@@ -571,6 +571,13 @@ def create_experiment(request: Request, wid: str, body: Experiment):
             raise HTTPException(
                 422, "Recommendation no longer available; refresh sources"
             )
+        if (
+            value["source_snapshot"] is not None
+            and value["source_snapshot"]["baseline_id"] != body.baseline_id
+        ):
+            raise HTTPException(
+                422, "Baseline video must match the selected recommendation"
+            )
         value["generation_brief"] = gen_brief(value)
         value["history"].append(
             {
@@ -683,7 +690,7 @@ async def edit_video(
             )
 
     def work(op):
-        from .media import replace_segment, probe
+        from .media_edit_v2 import replace_segment
 
         variant_id = db.uid()
         out = db.ROOT / wid / (variant_id + ".mp4")
@@ -696,7 +703,7 @@ async def edit_video(
             "synthetic": source["synthetic"],
             "analysis": None,
             "created_at": db.now(),
-            **probe(out),
+            **report["metadata"],
         }
         # Only originally authored sources have fixture annotations; edited variants need fresh analysis.
         with db.connect() as c:

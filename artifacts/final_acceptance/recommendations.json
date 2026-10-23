@@ -1,0 +1,135 @@
+{
+  "scope": "Descriptive recommendation eligibility, arithmetic, references, limitations. Not model quality or engagement uplift.",
+  "provenance": "Authored synthetic software acceptance cases. Expected labels are test specifications, not human annotations of real video.",
+  "baseline": "Unstratified hook mean difference; ignores provenance, denominator and repetition controls. Deliberately simple, not an industry benchmark.",
+  "n": 12,
+  "scores": {
+    "rule_correct": 12,
+    "baseline_correct": 5,
+    "references_correct": 12,
+    "calculations_correct": 12,
+    "limitations_present": 12
+  },
+  "cases": [
+    {
+      "case": "compatible_pattern",
+      "expected": "observational",
+      "actual": "observational",
+      "rule_correct": true,
+      "baseline_correct": true,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "no_metrics",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": true,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "paid_vs_organic",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "different_platforms",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "different_sources",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "unknown_hook",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": true,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "missing_retention",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "repeat_publication",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "small_denominators",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "equal_means",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": true,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "reverse_pattern",
+      "expected": "observational",
+      "actual": "observational",
+      "rule_correct": true,
+      "baseline_correct": true,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    },
+    {
+      "case": "different_windows",
+      "expected": "exploratory",
+      "actual": "exploratory",
+      "rule_correct": true,
+      "baseline_correct": false,
+      "references_correct": true,
+      "calculations_correct": true,
+      "limitations_present": true
+    }
+  ]
+}

@@ -7,6 +7,7 @@ Start the seeded server on 127.0.0.1:8770 first.
 from __future__ import annotations
 
 import json
+import argparse
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -18,6 +19,9 @@ BASE = "/api/workspaces/demo-coffee"
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, default=ROOT / 'artifacts/verification/demo_flow.json')
+    output = parser.parse_args().output
     # This acceptance client is restricted to the local demo server, not a proxy.
     with httpx.Client(base_url="http://127.0.0.1:8770", timeout=20, trust_env=False) as client:
 
@@ -102,7 +106,7 @@ def main() -> None:
             "kind": "synthetic localhost HTTP acceptance walkthrough",
             "live_api_calls": 0,
             "experiment_id": experiment["id"],
-            "url": "http://127.0.0.1:8770/#experiment/" + experiment["id"],
+            "url": "http://127.0.0.1:8770/#experiments/" + experiment["id"],
             "first_import": {key: first[key] for key in ("inserted", "duplicate")},
             "repeated_import": {
                 key: repeated[key] for key in ("inserted", "duplicate")
@@ -111,7 +115,6 @@ def main() -> None:
             "evaluation": result,
             "knowledge_record_found": True,
         }
-        output = ROOT / "artifacts/verification/demo_flow.json"
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(json.dumps(report, indent=2) + "\n")
         print(report["url"])

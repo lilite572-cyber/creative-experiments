@@ -1,0 +1,48 @@
+{
+  "date_almaty": "2026-10-23",
+  "browser": "ChatGPT in-app browser",
+  "viewport_width": 1280,
+  "horizontal_overflow": false,
+  "synthetic_workspace": "separate from real-source pilot",
+  "saved_gemini_analysis": "visible with source attribution and review flags",
+  "evidence_seek_seconds": 19.041666,
+  "persisted_after_restart": [
+    "real-source video",
+    "saved analysis",
+    "draft experiment",
+    "failed edit operation"
+  ],
+  "real_edit": {
+    "experiment_id": "f136618391b64b51bb95109b3dbffee1",
+    "editor_version": "generated-media-v2",
+    "status": "completed",
+    "duration_seconds": 44.458333,
+    "total_frames": 1067,
+    "replaced_frames": 48,
+    "unchanged_frames_verified": 1019,
+    "video_players_ready_state": [
+      4,
+      4
+    ],
+    "video_errors": [
+      null,
+      null
+    ],
+    "variant_played_to_end": true,
+    "experiment_status": "draft",
+    "publication_metrics": null,
+    "source": "Kelliks, Coffee Bean & Tea Leaf Process, CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coffee_Bean_%26_Tea_Leaf_Process.webm",
+    "modifications": "Silent 24 fps H.264 conversion; local alternative from 31.708333 seconds replaces seconds 0–2; no video generation call."
+  },
+  "fixed_failure": "Frozen editor rejected lossless output over100MiB; separate v2 editor with generated512MiB limit succeeded. Original failure retained.",
+  "console_errors": [],
+  "console_warnings": [],
+  "new_api_calls": 0,
+  "new_api_spend_usd": 0,
+  "not_claimed": [
+    "human semantic quality rating",
+    "real engagement improvement",
+    "public deployment readiness"
+  ]
+}

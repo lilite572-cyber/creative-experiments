@@ -1,0 +1,105 @@
+{
+  "executed_at": "2026-10-23T01:13:02.760715+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-15.0-arm64-arm-64bit",
+  "live_api_calls": 0,
+  "checks": [
+    {
+      "check": "tests",
+      "command": [
+        "/tmp/creative-final-20261023/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/final_acceptance/tests.txt",
+      "stderr": null
+    },
+    {
+      "check": "dependencies",
+      "command": [
+        "/tmp/creative-final-20261023/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/final_acceptance/dependencies.txt",
+      "stderr": null
+    },
+    {
+      "check": "recommendations",
+      "command": [
+        "/tmp/creative-final-20261023/bin/python",
+        "scripts/evaluate_recommendations.py"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/final_acceptance/recommendations.json",
+      "stderr": ""
+    },
+    {
+      "check": "javascript",
+      "command": [
+        "node",
+        "--check",
+        "web/app.js"
+      ],
+      "exit_code": 0,
+      "output": "artifacts/final_acceptance/javascript.txt",
+      "stderr": null
+    }
+  ],
+  "javascript_check_skipped": false,
+  "sha256": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/db.py": "73ee930821c0b2fefb6390c8fe9383e19f70dc2cf57ef7ccf6fb91f3b87df4ab",
+    "app/demo.py": "ed851af34634b2adff56ed90c992595008eb441cb87b334bc777405a66992608",
+    "app/gemini_provider.py": "fe59f1665130d42e28a7bfcf614ea97366ae221342fe86cf71cb466333b54d7e",
+    "app/main.py": "d51a5ece4173f72997c913ae98bb2619ad89a3c886a86c36ae6a20f84b6ac3a5",
+    "app/media.py": "83fb2626f247a11e29a1dc0b3b4319ae797af6dec21540cb90cb080c4097eb5e",
+    "app/media_edit_v2.py": "4155a77ced65babad5bb5dd16efff6270f333983f0808ebc4f2b53c55bde7f0b",
+    "app/provider.py": "99c6ee21e8429ea1f0bffdbd2888ee5931c8cf78e6542e2b581ac928e78fac8a",
+    "app/research.py": "9006456c6124302584e9e86e529a7657893dbab3ae746f03656d7f5da3d00589",
+    "fixtures/demo/README.md": "230d96c22b2f93ff342029dd98a4804dafcdca9288139f8e9281c01f7b075039",
+    "fixtures/demo/metrics.csv": "32a77dde61a5c7d99610b7f07a928cb2360b4d868b58fd4267b04f547425a19d",
+    "fixtures/demo/replacement.mp4": "a31baebed863c12083305fc05926e97f03d2225d709204225f9ab5c7f0ada497",
+    "fixtures/demo/sample.mp4": "f7831f448ccd45cd84800bc75ed479a18ee11f2d76d20a22294759fa422b8849",
+    "fixtures/evaluation.json": "c9156bfce14b5c59999ee27ca3c97b901d9831473e5f08055f4ff141acb3fd17",
+    "scripts/configure_openai.py": "5f6f854c55aca3d915a803b33595c63947a62ec740e5fec85976d6793eb31e18",
+    "scripts/demo_walkthrough.py": "5dd41df071590132d02182fded2ebb5da61e8d44ad64fd4f3d7f0484b45ab726",
+    "scripts/evaluate_recommendations.py": "2ec7f93e0ac65041a5544869a90c7fdaba8b881586d7a8e0ece6cce5692c4682",
+    "scripts/import_gemini_evidence.py": "7e4cb419ec4a459d1b866f4b977241c8d4ab7586caa4fca4fdbc1fc294ff2ee5",
+    "scripts/prepare_live_pilot.py": "4fde1983a9ed79b169a89368acbc332f91a91f2f4d85aab939c56cf96ab31067",
+    "scripts/provider_diagnostics.py": "b24b7220b3c2521a2befefeb861ca81ec8fc6c80cb741f9bfb50a946df1ec38e",
+    "scripts/recover_open_media_check.py": "b72ab2fb7fab001e529f88afe960d111daec507e78be483e3c4a1d0081d4c92f",
+    "scripts/review_gemini_run.py": "9824ebda70786b41f09014d458e2302ff7130d8b6d761a98dd08bf7dce6eb0bb",
+    "scripts/run_authorized_pilots.py": "68ce99464b814b85c2fe9ae5644bc868a0d7d14a953b86a933171d7a4027b03f",
+    "scripts/run_gemini_check.py": "6b12a878f50b6bfffe711d243ca63044d4df5cd308b4c8862d1c1e0d21da61f3",
+    "scripts/run_live_pilot.py": "d1700bcf24c62484859ab8c84188cba359b9d868fcb0ec8a623d6622c13772ed",
+    "scripts/run_open_media_check.py": "2cf38cdd2953dee9fbef8cad2aaeefecd96180cf681effda77f8c00006b4dbf4",
+    "scripts/verify.py": "a03b3bd8b966d3ee46b61a552d562c40b7ecbd389ea26f66bd0208a25bda7d2d",
+    "tests/test_api.py": "64b2cbbc260bc069c9c2a1a9bce94b4dd78ef919464fc0d7633240fc926c0790",
+    "tests/test_combined_pilots.py": "f78fff17919df653b850dd45ee3835688cc77b1d48aea9ca4cdbcf272e47f6cd",
+    "tests/test_configure_openai.py": "ca33c68c58b948bb9d1ac164ca28767382572adaa4bd44cbb21c579bfa9568e9",
+    "tests/test_evidence_import.py": "7c14a61b30bac53dbe399c3ac12c65ddc8d09745fa228a2c25f6cd9fbc1c1410",
+    "tests/test_final_integrity.py": "924f2f25a4209473f0d857a4aa6377c5ceed998d258c32c64ebf9baaa92cffda",
+    "tests/test_gemini_check.py": "5c35e8a598edda07d3268be8880db10789063c12da7a181cfbec150aca3c3374",
+    "tests/test_gemini_offline_review.py": "69b6bbc230a2fa1213bf452600c5577dc64077f350b4a7c8198f587f040cae37",
+    "tests/test_live_pilot_prepare.py": "7ed7fe20359b8d1e744b5afa856584000fcba2313c527f7f55b3936648ca4419",
+    "tests/test_live_pilot_run.py": "938fb6589c1b9fddbe444f9b684dbf460cc48702b2e5205f019ca6157f54887a",
+    "tests/test_media_edit_v2.py": "b66f8a6aad06869b6891a7b2a7bc438ebb1b7ee82e032df8adb3705c35d0ecca",
+    "tests/test_media_provider.py": "2756d2d9acbc68bf3b7d6d28e2675b0d18ff3d215d8d879925dab8435e9b1ffa",
+    "tests/test_open_media_check.py": "38fc6cb8be5d02424ead362c26ea0ba992061ca138483a1d21d5e1f473168b77",
+    "tests/test_open_media_recovery.py": "9c9b91f9050025482df42c2ad8433394cf3ba4142f1623b91af4570054f072b2",
+    "tests/test_research.py": "4616b7a1c5885024d0589354c2dbb0d4dd7b61cbd386b8af49996a97abb2e873",
+    "web/app.js": "4885163419a2cebd2a039c7035f5e36641c6378b84cac6912fc52ea508884d7c",
+    "web/index.html": "22f6e2e2f8e4d6c236090a736888bf68b22d6c150f092ea3875ed30d37234347",
+    "web/styles.css": "c8e165e5329a4d7b41058d24a934c83d1d9088f14890e62f996cac2ba3d0efdf",
+    "requirements.txt": "1247cbb65d7d0cb62f4c85d9907a1fc5333f94e326025f3cdca4ce9e53c590bd",
+    "requirements.lock": "01d543d49e1d065d2c0b3c49d6d7319398d604d4355279cfa1c09f2f154dcabf"
+  }
+}

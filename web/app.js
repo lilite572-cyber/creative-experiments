@@ -137,10 +137,13 @@ async function api(path, options = {}) {
   return data;
 }
 async function refreshData() {
+  const workspaceId = state.workspace.id;
+  const route = state.route;
   const [videos, experiments] = await Promise.all([
     api(wsPath("/videos")),
     api(wsPath("/experiments")),
   ]);
+  if (state.workspace?.id !== workspaceId || state.route !== route) return;
   state.videos = videos;
   state.experiments = experiments;
 }
@@ -517,6 +520,8 @@ async function renderLibrary() {
               ? "Fixture annotation"
               : v.analysis.mode === "openai"
                 ? "Model analysis"
+                : v.analysis.mode === "gemini_import"
+                  ? "Saved Gemini analysis"
                 : "Local measurements"
             : "Not analyzed",
         ),
@@ -675,10 +680,14 @@ async function renderAnalysis(id, start) {
       "p",
       "status-line",
       analysis
-        ? `Analysis source: ${analysis.mode === "synthetic_fixture" ? "authored synthetic fixture" : analysis.mode === "openai" ? analysis.model || "OpenAI" : "local video measurements"}`
+        ? `Analysis source: ${analysis.mode === "synthetic_fixture" ? "authored synthetic fixture" : analysis.mode === "gemini_import" ? `saved response · ${analysis.model}` : analysis.mode === "openai" ? analysis.model || "OpenAI" : "local video measurements"}`
         : "No analysis saved yet.",
     ),
   );
+  if (video.provenance) {
+    const p = video.provenance;
+    left.append(e("p", "measure-note", `${p.title} · ${p.author} · ${p.license}. ${p.modifications || ""}`));
+  }
   left.append(
     append(
       e("div", "analysis-actions"),
