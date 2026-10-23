@@ -112,6 +112,43 @@ class GeminiCheckTests(unittest.TestCase):
             runner.execute(self.factory)
         self.assertFalse(self.calls)
 
+    def test_long_auth_key_can_be_configured_and_read_privately(self):
+        self.key_path.unlink()
+        (self.private / 'authorization.json').unlink()
+        auth_key = 'AQ.' + 'synthetic_test_token-' * 45
+        with patch.object(runner.sys.stdin, 'isatty', return_value=True), \
+                patch('builtins.input', return_value='FREE'), \
+                patch.object(runner.getpass, 'getpass', return_value=auth_key), \
+                patch('builtins.print') as output:
+            runner.configure()
+        self.assertEqual(runner.read_key(), auth_key)
+        self.assertNotIn(auth_key, str(output.call_args_list))
+        self.assertEqual(self.key_path.stat().st_mode & 0o777, 0o600)
+        auth = runner.guard._json(self.private / 'authorization.json')
+        self.assertEqual(auth['key_sha256'], runner.key_digest(auth_key))
+        self.assertFalse(self.calls)
+
+    def test_malformed_key_input_never_echoed(self):
+        for value in ['', 'short', 'x' * 4097, 'x' * 30 + '\nheader',
+                'x' * 30 + ' space', '"' + 'x' * 30 + '"', 'я' * 30]:
+            with self.subTest(length=len(value)), self.assertRaises(ValueError) as caught:
+                runner.validate_key_input(value)
+            if len(value) > 10:
+                self.assertNotIn(value, str(caught.exception))
+
+    def test_original_preparation_preserved_and_revision_cannot_bypass_run(self):
+        plan = self.private / runner.PLAN_NAME
+        plan.unlink()  # Temporary fixture only; never resets an actual run.
+        old = self.private / 'plan.json'
+        old.write_text('{"previous":"unchanged"}')
+        before = old.read_bytes()
+        runner.prepare()
+        self.assertEqual(old.read_bytes(), before)
+        self.assertEqual(runner.check()[0]['previous_plan_sha256'], runner.guard._sha(old))
+        (self.private / 'run').mkdir()
+        with self.assertRaisesRegex(ValueError, 'inference run'):
+            runner.prepare()
+
     def test_frozen_runtime_and_prior_ledger_tamper_rejected(self):
         path = self.root / runner.RUNTIME[0]
         before = path.read_text()

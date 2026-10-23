@@ -21,7 +21,9 @@ guard = original.guard
 PRIVATE = ROOT / 'data/private/gemini-open-media-v1'
 KEY = ROOT / 'data/private/gemini_api_key'
 PROTOCOL = 'gemini-open-media-v1'
-RUNTIME = ['app/gemini_provider.py', 'scripts/run_gemini_check.py', 'docs/gemini_open_media_v1.md']
+PLAN_NAME = 'plan-key-format-v2.json'
+RUNTIME = ['app/gemini_provider.py', 'scripts/run_gemini_check.py', 'docs/gemini_open_media_v1.md',
+    'docs/gemini_key_format_v2.md']
 
 
 def safe_directory(path):
@@ -34,6 +36,15 @@ def key_digest(key):
     return hashlib.sha256(key.encode()).hexdigest()
 
 
+def validate_key_input(key):
+    # Keys are opaque credentials, not necessarily legacy AIza traffic keys.
+    # Accept bounded ASCII token characters, including AQ. auth keys. Only the
+    # provider can establish validity. Never echo rejected input.
+    if not isinstance(key, str) or not re.fullmatch(r'[A-Za-z0-9._~+/=-]{20,4096}', key):
+        raise ValueError('Paste the complete API key only, without quotes, spaces or line breaks; nothing saved.')
+    return key
+
+
 def read_key():
     if any(p.is_symlink() for p in [KEY, *KEY.parents]):
         raise ValueError('Key symlink refused.')
@@ -41,12 +52,10 @@ def read_key():
     with os.fdopen(fd) as handle:
         info = os.fstat(handle.fileno())
         if (not stat.S_ISREG(info.st_mode) or info.st_uid != os.geteuid()
-                or stat.S_IMODE(info.st_mode) != 0o600 or info.st_size > 512):
+                or stat.S_IMODE(info.st_mode) != 0o600 or info.st_size > 4097):
             raise ValueError('Key must be an owned regular file with mode 0600.')
         key = handle.read().strip()
-    if not re.fullmatch(r'AIza[A-Za-z0-9_-]{20,100}', key):
-        raise ValueError('Invalid-form Gemini key; do not paste it into chat.')
-    return key
+    return validate_key_input(key)
 
 
 def configure():
@@ -62,8 +71,7 @@ def configure():
     if answer != 'FREE':
         raise ValueError('Free-tier execution not confirmed; no request sent.')
     key = getpass.getpass('Вставь Gemini API key (ввод скрыт): ').strip()
-    if not re.fullmatch(r'AIza[A-Za-z0-9_-]{20,100}', key):
-        raise ValueError('Invalid-form key; nothing saved.')
+    validate_key_input(key)
     fd = os.open(KEY, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
     with os.fdopen(fd, 'w') as handle:
         handle.write(key + '\n')
@@ -78,10 +86,14 @@ def configure():
 def prepare():
     original.check_packet()
     safe_directory(PRIVATE)
-    plan_path = PRIVATE / 'plan.json'
+    plan_path = PRIVATE / PLAN_NAME
+    if (PRIVATE / 'run').exists():
+        raise ValueError('An inference run already exists; preparation cannot authorize replay.')
     if plan_path.exists():
         raise ValueError('Plan already exists; do not overwrite frozen protocol.')
     plan = {'protocol': PROTOCOL, 'model': gemini.MODEL, 'budget_usd': 0,
+        'setup_revision': 'key-format-v2',
+        'previous_plan_sha256': guard._sha(PRIVATE / 'plan.json') if (PRIVATE / 'plan.json').exists() else None,
         'max_attempts': 2, 'automatic_retries': 0,
         'source_freeze_sha256': guard._sha(original.PACKET / 'freeze.json'),
         'prior_openai_ledger_sha256': guard._sha(guard.LEDGER_ROOT / 'ledger.json'),
@@ -95,11 +107,15 @@ def check():
     freeze, frames = original.check_packet()
     if any(p.is_symlink() for p in [PRIVATE, *PRIVATE.parents]):
         raise ValueError('Private path symlink refused.')
-    plan = guard._json(PRIVATE / 'plan.json')
+    plan = guard._json(PRIVATE / PLAN_NAME)
     if (plan.get('protocol') != PROTOCOL or plan.get('model') != gemini.MODEL
+            or plan.get('setup_revision') != 'key-format-v2'
             or plan.get('budget_usd') != 0 or plan.get('max_attempts') != 2
             or plan.get('automatic_retries') != 0 or set(plan.get('runtime', {})) != set(RUNTIME)):
         raise ValueError('Unexpected Gemini plan.')
+    previous = PRIVATE / 'plan.json'
+    if (guard._sha(previous) if previous.exists() else None) != plan.get('previous_plan_sha256'):
+        raise ValueError('Previous preparation evidence changed.')
     for path, digest in plan['runtime'].items():
         if guard._sha(ROOT / path) != digest:
             raise ValueError('Gemini runtime or protocol changed after freeze.')
@@ -124,7 +140,8 @@ def execute(transport_factory=gemini.Transport):
     run = PRIVATE / 'run'
     run.mkdir(mode=0o700)
     ledger = {'protocol': PROTOCOL, 'status': 'running', 'attempts': [],
-        'plan_sha256': guard._sha(PRIVATE / 'plan.json'),
+        'plan_sha256': guard._sha(PRIVATE / PLAN_NAME),
+        'setup_revision': 'key-format-v2',
         'authorization_sha256': guard._sha(PRIVATE / 'authorization.json'),
         'budget_usd': 0, 'free_tier_basis': 'owner_attestation_not_api_verified'}
     guard._write(run / 'ledger.json', ledger)

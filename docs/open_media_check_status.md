@@ -2,6 +2,12 @@
 
 ## Separate Gemini continuation prepared
 
+Update: the first owner's Gemini setup was rejected by an overly restrictive
+local key-format check before any inference. The [documented correction](gemini_key_format_v2.md)
+accepts authorization keys, preserves the old preparation and freezes a revised
+runtime separately. Twenty-eight focused tests passed. No real key was read or
+live request sent while fixing this defect.
+
 The owner obtained a Gemini key. The new [Gemini protocol](gemini_open_media_v1.md)
 uses the existing licensed source and a separate ledger. It requires an explicit
 Free-tier confirmation tied to the key, permits two requests and no automatic

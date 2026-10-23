@@ -87,8 +87,11 @@ The owner must confirm **Free tier** for the key's project, without paid billing
 The API key alone cannot verify this. Expected additional expense is $0 under
 that condition; two requests maximum, no retries or paid/provider fallback.
 Keys are entered with hidden Terminal input and saved outside Git. See the
-protocol for setup and one-shot execution. Twenty-five focused tests passed
-(ten Gemini and fifteen existing open-media/recovery tests), using fake transports.
+protocol for setup and one-shot execution. The [key-format correction](docs/gemini_key_format_v2.md)
+adds support for current authorization keys after a local setup rejection;
+the original plan is preserved and the corrected runtime has a separate freeze.
+Twenty-eight focused tests passed (thirteen Gemini and fifteen existing
+open-media/recovery tests), using fake transports.
 
 ## Optional paid integration — disabled by default
 
