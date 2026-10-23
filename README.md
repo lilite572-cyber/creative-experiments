@@ -211,3 +211,12 @@ for differences in audiences, publication timing or distribution.
 
 BriefGuard remains a separate project. Its synthetic benchmark is not used as
 evidence of accuracy on these videos. MCP and RAG are not implemented here.
+
+## Publish the complete source
+
+The source application and aggregate-results repositories are separate. Run
+`bash scripts/publish_source.sh` from an owner-authorized Terminal to create or
+update `lilite572-cyber/creative-experiments` on `feature/creative-experiments`.
+The script checks the publication contents and verifies the remote commit.
+See [publication contents and screenshot attribution](docs/publication.md).
+No private data or API credentials belong in the source repository.

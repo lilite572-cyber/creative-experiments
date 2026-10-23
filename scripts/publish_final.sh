@@ -35,3 +35,6 @@ remote_head="$(git ls-remote origin refs/heads/research/results | cut -f1)"
 [[ "$local_head" == "$remote_head" ]] || { echo 'Remote verification failed.' >&2; exit 1; }
 echo 'Published and verified: https://github.com/lilite572-cyber/creative-experiments-results/tree/research/results'
 echo 'BriefGuard draft PR: https://github.com/lilite572-cyber/briefguard/pull/1'
+
+# The owner also requested publication of the full application source.
+bash "$ce_root/scripts/publish_source.sh"
